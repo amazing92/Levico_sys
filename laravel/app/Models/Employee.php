@@ -1,26 +1,27 @@
 <?php
 
+
 namespace App\Models;
+
 
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 
 /**
- * Class best
+ * Class bds
  * @package App\Models
- * @version May 11, 2022, 7:14 pm UTC
+ * @version May 11, 2022, 7:25 pm UTC
  *
  * @property integer $id
- * @property string $best
  */
-class best extends Model
+class Employee extends Model
 {
     use SoftDeletes;
 
 
-    public $table = 'best';
-    
+    public $table = 'employee';
+
 
     protected $dates = ['deleted_at'];
 
@@ -28,7 +29,8 @@ class best extends Model
 
     public $fillable = [
         'id',
-        'best'
+        'em_code',
+        'name'
     ];
 
     /**
@@ -40,14 +42,7 @@ class best extends Model
         'id' => 'integer'
     ];
 
-    /**
-     * Validation rules
-     *
-     * @var array
-     */
-    public static $rules = [
-        'best' => 'best'
-    ];
 
-    
+
 }
+

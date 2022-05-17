@@ -2,23 +2,18 @@
 
 namespace App\Repositories;
 
-use App\Models\best;
 use App\Repositories\BaseRepository;
+use App\Models\Employee;
 
-/**
- * Class bestRepository
- * @package App\Repositories
- * @version May 11, 2022, 7:14 pm UTC
-*/
-
-class bestRepository extends BaseRepository
+class EmployeeRepository extends BaseRepository
 {
     /**
      * @var array
      */
     protected $fieldSearchable = [
         'id',
-        'best'
+        'em_code',
+        'name'
     ];
 
     /**
@@ -31,11 +26,21 @@ class bestRepository extends BaseRepository
         return $this->fieldSearchable;
     }
 
+    public function test($input){
+
+        $model = $this->model->newInstance($input);
+
+        $model->save();
+
+        return $model;
+    }
+
+
     /**
      * Configure the Model
      **/
     public function model()
     {
-        return best::class;
+        return Employee::class;
     }
 }

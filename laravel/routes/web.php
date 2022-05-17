@@ -30,11 +30,3 @@ Route::post(
     'generator_builder/generate-from-file',
     '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@generateFromFile'
 )->name('io_generator_builder_generate_from_file');
-
-Route::resource('tests', App\Http\Controllers\testController::class);
-
-
-Route::resource('bests', App\Http\Controllers\bestController::class);
-
-
-Route::get('bds', '\App\Http\Controllers\bdsController@index')->name('bds.index');
