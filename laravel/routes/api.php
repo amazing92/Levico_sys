@@ -80,11 +80,14 @@ Route::group(['middleware' => 'api'], function ($router) {
     });
 });
 
+Route::group(['middleware' => 'api'], function ($router) {
 
+    Route::group(['prefix' =>'employee'], function ($router){
+        Route::post('create', 'API\EmployeeController@create')->name('employee.create');
+    });
 
-Route::resource('tests', app\Http\Controllers\API\testAPIController::class);
+});
 
+//Route::resource('tests', app\Http\Controllers\API\testAPIController::class);
+//Route::resource('labs', app\Http\Controllers\API\labAPIController::class);
 
-Route::resource('labs', app\Http\Controllers\API\labAPIController::class);
-
-Route::get('bds', '\App\Http\Controllers\bdsController@store')->name('bds');
